@@ -19,7 +19,7 @@ The project follows a standard Nx workspace structure with applications and libr
 
 ## Architecture
 
-```mermaid
+```
 graph LR
     Client[Client (HTTP)] --> Gateway[API Gateway]
     Gateway -- gRPC --> UserMS[User Microservice]
