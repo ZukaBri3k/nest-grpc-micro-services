@@ -1,0 +1,26 @@
+{
+  "name": "@test-ms-grpc/post-ms-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@test-ms-grpc/post-ms"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/post-ms-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@test-ms-grpc/post-ms:build",
+          "@test-ms-grpc/post-ms:serve"
+        ]
+      }
+    }
+  }
+}

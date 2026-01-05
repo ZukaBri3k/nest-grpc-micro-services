@@ -8,6 +8,21 @@
     },
     {
       "path": "./apps/api-gateway"
+    },
+    {
+      "path": "./apps/user-ms-e2e"
+    },
+    {
+      "path": "./apps/user-ms"
+    },
+    {
+      "path": "./apps/post-ms-e2e"
+    },
+    {
+      "path": "./apps/post-ms"
+    },
+    {
+      "path": "./libs/grpc-ts-types"
     }
   ]
 }

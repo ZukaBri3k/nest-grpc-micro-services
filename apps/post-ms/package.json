@@ -1,9 +1,11 @@
 {
-  "name": "@test-ms-grpc/api-gateway",
+  "name": "@test-ms-grpc/post-ms",
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "tags": ["backend"],
+    "tags": [
+      "backend"
+    ],
     "targets": {
       "build": {
         "executor": "nx:run-commands",
@@ -12,7 +14,7 @@
           "args": [
             "--node-env=production"
           ],
-          "cwd": "apps/api-gateway"
+          "cwd": "apps/post-ms"
         },
         "configurations": {
           "development": {
@@ -29,8 +31,8 @@
         "cache": true,
         "executor": "@nx/js:prune-lockfile",
         "outputs": [
-          "{workspaceRoot}/apps/api-gateway/dist/package.json",
-          "{workspaceRoot}/apps/api-gateway/dist/pnpm-lock.yaml"
+          "{workspaceRoot}/apps/post-ms/dist/package.json",
+          "{workspaceRoot}/apps/post-ms/dist/pnpm-lock.yaml"
         ],
         "options": {
           "buildTarget": "build"
@@ -42,7 +44,7 @@
         ],
         "cache": true,
         "outputs": [
-          "{workspaceRoot}/apps/api-gateway/dist/workspace_modules"
+          "{workspaceRoot}/apps/post-ms/dist/workspace_modules"
         ],
         "executor": "@nx/js:copy-workspace-modules",
         "options": {
@@ -64,15 +66,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@test-ms-grpc/api-gateway:build",
+          "buildTarget": "@test-ms-grpc/post-ms:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@test-ms-grpc/api-gateway:build:development"
+            "buildTarget": "@test-ms-grpc/post-ms:build:development"
           },
           "production": {
-            "buildTarget": "@test-ms-grpc/api-gateway:build:production"
+            "buildTarget": "@test-ms-grpc/post-ms:build:production"
           }
         }
       },

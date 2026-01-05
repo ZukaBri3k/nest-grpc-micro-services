@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package post;
+
+service PostService {
+  rpc getPostById (PostIdRequest) returns (Post);
+  rpc getAllPosts (EmptyPostRequest) returns (Posts);
+  rpc createPost (CreatePostRequest) returns (Post);
+  rpc updatePost (UpdatePostRequest) returns (Post);
+  rpc deletePost (PostIdRequest) returns (Post);
+}
+
+message PostIdRequest {
+  int32 id = 1;
+}
+
+message EmptyPostRequest {}
+
+message CreatePostRequest {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+}
+
+message UpdatePostRequest {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+}
+
+message Post {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+}
+
+message Posts {
+  repeated Post posts = 1;
+}

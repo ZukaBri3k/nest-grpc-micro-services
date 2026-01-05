@@ -1,4 +1,6 @@
 packages:
-  - "apps/*"
-
+  - 'apps/*'
+  - 'libs/grpc-types'
+  - 'apps/post-ms/*'
+  - 'libs/*'
 autoInstallPeers: true
