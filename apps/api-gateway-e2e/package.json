@@ -1,0 +1,26 @@
+{
+  "name": "@test-ms-grpc/api-gateway-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@test-ms-grpc/api-gateway"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/api-gateway-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@test-ms-grpc/api-gateway:build",
+          "@test-ms-grpc/api-gateway:serve"
+        ]
+      }
+    }
+  }
+}
